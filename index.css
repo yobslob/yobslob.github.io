@@ -1,6 +1,6 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #7a7979;
+  background-color: #000000;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -14,7 +14,7 @@ header {
   display: flex;
   align-items: center;
   padding: 1rem 2rem;
-  z-index: 1000;
+  z-index: 10;
   justify-content: space-between;
 }
 
@@ -22,6 +22,18 @@ header .logo {
   display: flex;
   align-items: center;
   margin-right: 20px;
+}
+
+header #white {
+  font-size: 1.5rem;
+  color: #f4f4f4;
+  margin-right: 10px;
+
+}
+
+header #purple {
+  font-size: 1.5rem;
+  color: purple;
 }
 
 header nav {
@@ -43,7 +55,7 @@ header nav ul {
   display: flex;
   gap: 2.5rem;
   padding: 0;
-  margin-left: 10%;
+  margin-top: 5%;
 }
 
 header nav ul li a:hover {
@@ -58,12 +70,28 @@ header nav ul li a {
 }
 
 header .get-app {
-  background-color: #fff;
-  border: none;
+  background-color: transparent;
+  border: 1px white solid ;
+  animation: border-gradient 4s infinite;
+  white-space: nowrap;
+  border-radius: 10px;
   padding: 0.3rem 1.2rem;
   cursor: pointer;
   font-size: 1rem;
   margin-left: 40%;
+  color: #f4f4f4;
+}
+
+@keyframes border-gradient {
+  0% {
+    border-color: #fff;
+  }
+  50% {
+    border-color: #3d3d3d;
+  }
+  100% {
+    border-color: #fff;
+  }
 }
 
 .hero {
@@ -79,14 +107,13 @@ header .get-app {
 }
 
 .video-container {
-  position: absolute;
+  position:absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   z-index: -1;
   overflow: hidden;
-  padding-top: 100px;
 }
 
 .video-container video {
@@ -97,7 +124,7 @@ header .get-app {
 
 .catchy-phrase {
   position: relative;
-  padding: 14rem;
+  padding: 17rem;
   border-radius: 10px;
   z-index: 1;
   opacity: 0;
@@ -154,74 +181,171 @@ article p {
   color: #666;
 }
 
+.counter {
+  margin-top: 300px;
+  margin-bottom: 200px;
+  background-color: #000000;
+  padding: 50px 0;
+  text-align: center;
+}
 
-.photo-cards {
+.counter h1 {
+  font-size: 42px;
+  font-weight: 50;
+  font-family: 'Roboto', Arial, sans-serif;
+  margin-bottom: 20px;
+  color: #f4f4f4;
+}
+
+.counter #inner_about {
+  font-size: 18px;
+  font-family: 'Roboto', Arial, sans-serif;
+  color: #bfb4b4;
+  margin-top: 38px;
+  margin-bottom: 70px;
+}
+
+.counter #inner_about::before {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 2px;
+  background-color: #ccc;
+  margin: 20px auto;
+}
+
+.metrics {
   display: flex;
-  justify-content: space-between;
-  gap: 2rem;
-  padding: 2rem;
+  justify-content: center;
+  gap: 13rem;
+  padding: 4rem;
 }
 
-.photo-cards .card img {
+.metric-card p {
+  font-size: 4rem; /* Adjust to fit with the numeric value */
+  color: purple;   /* Match the color of the number */
+  white-space: nowrap;
+  display: inline; /* Ensure it stays on the same line as the number */
+  margin-left: 5px; /* Optional: Add space between the number and the text */
+  font-weight: bold;
+}
+
+.metric-card {
+  background-color: #000000; /* Set background color to black */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  max-width: 200px;
+  padding: 1rem;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 1s ease-out, transform 1s ease-out;
+  position: relative;
+}
+
+.metric-card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.metric-card h3 {
+  margin: 0;
+  font-size: 1.1rem; /* Title font size */
+  white-space: nowrap;
+  color: #f4f4f4; /* White color for text */
+  position: absolute;
+  bottom: 5px; /* Position the title at the bottom */
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.metric-value {
+  font-size: 4.5rem; /* Increase the font size for the count */
+  font-weight: bold;
+  color: purple; /* Change the color if needed */
+  margin-bottom: 2rem; /* Increase space between number and text */
+}
+
+.previous-clients {
+  background-color: #000000;
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.previous-clients h2 {
+  font-size: 2.5rem;
+  color: #f4f4f4;
+  margin-bottom: 2rem;
+}
+
+.client-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* Distributes cards to the left and right */
+  max-width: 1200px; /* Adjust this as necessary */
+  margin: 0 auto;
+  gap: 5rem; /* Adjust the spacing between the cards */
+}
+
+.client-card {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 1.5rem;
+  text-align: center;
+  transition: transform 0.3s;
+  width: 48%; /* Ensures two cards fit in one row */
+  box-sizing: border-box;
+  margin-bottom: 300px;
+}
+
+.client-card:hover {
+  transform: translateY(-10px);
+}
+
+.client-photo img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+.client-card h3 {
+  font-size: 1.1rem;
+  color: #f4f4f4;
+  margin-bottom: 1rem;
+}
+
+.client-rect-photo img {
   width: 100%;
-  height: 100%;
+  height: 120px;
   object-fit: cover;
+  border-radius: 5px;
+  margin-bottom: 1rem;
 }
 
-.photo-cards .left-cards,
-.photo-cards .right-cards {
+.client-card p {
+  font-size: 0.8rem;
+  color: #bfb4b4;
+}
+
+.client-cards {
   display: flex;
   flex-direction: column;
   gap: 2rem;
 }
 
-.photo-cards .left-cards {
-  align-items: flex-start;
-}
-
-.photo-cards .right-cards {
-  align-items: flex-end;
-}
-
-.photo-cards .card {
-  width: 200px;
-  height: 300px;
-  background-color: #f4f4f4;
+.client-row {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  opacity: 0;
-  transform: translateY(100px);
-  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
-  border-radius: 20px;
+  justify-content: space-between;
 }
 
-.photo-cards .card.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.photo-cards .left-cards .card:nth-child(odd),
-.photo-cards .right-cards .card:nth-child(even) {
-  margin-left: 20px;
-}
-
-.photo-cards .left-cards .card:nth-child(even),
-.photo-cards .right-cards .card:nth-child(odd) {
-  margin-left: -20px;
-}
-
-.photo-cards .right-cards .card:nth-child(odd) {
-  margin-right: -20px;
-}
-
-.photo-cards .right-cards .card:nth-child(even) {
-  margin-right: 20px;
-}
-
-footer {
-  background-color: #333;
-  color: #fff;
+.client-card {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 1rem;
   text-align: center;
-  padding: 1rem 0;
+  transition: transform 0.3s;
+  max-width: 200px;
+  width: 48%;
 }
