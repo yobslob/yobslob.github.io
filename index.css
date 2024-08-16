@@ -1,0 +1,227 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #7a7979;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  background-color: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  display: flex;
+  align-items: center;
+  padding: 1rem 2rem;
+  z-index: 1000;
+  justify-content: space-between;
+}
+
+header .logo {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+
+header nav {
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+}
+
+header .logo img {
+  height: 101px;
+  margin-right: 10px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 20px;
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2.5rem;
+  padding: 0;
+  margin-left: 10%;
+}
+
+header nav ul li a:hover {
+  color: #ff6347;
+  transition: color 0.3s;
+}
+
+header nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+header .get-app {
+  background-color: #fff;
+  border: none;
+  padding: 0.3rem 1.2rem;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-left: 40%;
+}
+
+.hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-align: center;
+  overflow: hidden;
+}
+
+.video-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+  padding-top: 100px;
+}
+
+.video-container video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.catchy-phrase {
+  position: relative;
+  padding: 14rem;
+  border-radius: 10px;
+  z-index: 1;
+  opacity: 0;
+  animation: fadeIn 2s forwards;
+  animation-delay: 1s;
+}
+
+.catchy-phrase h1 {
+  color: #4d1717;
+  font-size: 2.5rem;
+  margin: 0;
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+.articles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 2rem;
+  z-index: 1;
+}
+
+article {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  padding: 1rem;
+  transition: transform 0.3s;
+}
+
+article:hover {
+  transform: translateY(-10px);
+}
+
+article h2 {
+  font-size: 1.5rem;
+  color: #333;
+}
+
+article p {
+  font-size: 1rem;
+  color: #666;
+}
+
+
+.photo-cards {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.photo-cards .card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.photo-cards .left-cards,
+.photo-cards .right-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.photo-cards .left-cards {
+  align-items: flex-start;
+}
+
+.photo-cards .right-cards {
+  align-items: flex-end;
+}
+
+.photo-cards .card {
+  width: 200px;
+  height: 300px;
+  background-color: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transform: translateY(100px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+  border-radius: 20px;
+}
+
+.photo-cards .card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.photo-cards .left-cards .card:nth-child(odd),
+.photo-cards .right-cards .card:nth-child(even) {
+  margin-left: 20px;
+}
+
+.photo-cards .left-cards .card:nth-child(even),
+.photo-cards .right-cards .card:nth-child(odd) {
+  margin-left: -20px;
+}
+
+.photo-cards .right-cards .card:nth-child(odd) {
+  margin-right: -20px;
+}
+
+.photo-cards .right-cards .card:nth-child(even) {
+  margin-right: 20px;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+}
