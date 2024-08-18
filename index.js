@@ -96,12 +96,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (cardRect.left < containerRect.left + 80) {
                         card.classList.add('blur-in');
                         card.classList.remove('blur-out');
-                    } 
+                    }
                     // Check if the card is near the end of the container
                     else if (cardRect.right > containerRect.right - 80) {
                         card.classList.add('blur-out');
                         card.classList.remove('blur-in');
-                    } 
+                    }
                     // Remove blur effect for cards in the middle
                     else {
                         card.classList.remove('blur-in', 'blur-out');
@@ -116,6 +116,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const longFormButton = document.querySelector('.long-form');
     const shortFormContent = document.getElementById('short-form-content');
     const longFormContent = document.getElementById('long-form-content');
+
+    if (shortFormButton.classList.contains('active')) {
+        shortFormContent.classList.add('active');
+    }
 
     // Function to set the active and inactive states
     const setActiveButton = (activeButton, inactiveButton) => {
@@ -144,4 +148,5 @@ document.addEventListener('DOMContentLoaded', () => {
         setActiveButton(longFormButton, shortFormButton);
         toggleContent(longFormContent, shortFormContent);
     });
+
 });
