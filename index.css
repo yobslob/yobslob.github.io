@@ -21,7 +21,7 @@ header {
 header .logo {
   display: flex;
   align-items: center;
-  margin-right: 20px;
+  margin-right: 10px;
 }
 
 header #white {
@@ -46,7 +46,7 @@ header .logo img {
   margin-right: 10px;
   border-radius: 50%;
   object-fit: cover;
-  margin-right: 20px;
+  margin-right: 15px;
 }
 
 header nav ul {
@@ -55,10 +55,11 @@ header nav ul {
   gap: 2.5rem;
   padding: 0;
   margin-top: 5%;
+  white-space: nowrap;
 }
 
 header nav ul li a:hover {
-  color: #ff6347;
+  color: #a947ff;
   transition: color 0.3s;
 }
 
@@ -412,20 +413,17 @@ article p {
   display: none; /* Hide all sections by default */
 }
 
-#short-form-content {
-  display: block; /* Show short form content by default */
-}
-
 .content-section.active {
   display: block; /* Show the active section */
 }
+
 
 /* Short Form Content Styles */
 
 .short-form-content-wrapper {
   text-align: center;
-  margin: 2rem auto;
-  max-width: 800px; /* Adjust max width as needed */
+  margin: rem auto;
+  max-width: 6800px; /* Adjust max width as needed */
 }
 
 .content-sections {
@@ -441,54 +439,35 @@ article p {
   margin: 20px 0;
 }
 
-.big-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  margin: 20px 0;
-}
 
-.big-card-content {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 20px; /* Adjust gap between small cards */
-}
-
-.small-card {
-  background-color: #f4f4f4; /* Example background color */
-  padding: 20px;
-  border-radius: 5px;
-  width: 200px; /* Adjust width as needed */
-  text-align: center;
-}
-
-#short-form-content h1 {
+.statement h1 {
   font-size: 1.8rem; /* Adjust size as needed */
+  color: #f8f8f8;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.statement h3 {
+  font-size: 1.2rem;
+  color: #ffffff;
+  margin-bottom: 8rem;
+  text-align: center;
+}
+
+/* Long Form Content Styles */
+
+#long-form-content h1 {
+  font-size: 1.8rem;
   color: #f4f4f4;
   margin-bottom: 3rem;
   text-align: center;
 }
 
-#short-form-content p {
-  font-size: 1rem;
-  color: #f4f4f4;
-  margin-bottom: 1rem;
-  text-align: center;
-}
-
-#short-form-content h3 {
+#long-form-content h4 {
   font-size: 1.2rem;
   color: #f4f4f4;
   margin-bottom: 8rem;
   text-align: center;
-}
-
-.content-divider {
-  width: 60%;
-  margin: 1rem auto;
-  border: 1px solid #f4f4f4;
 }
 
 .book-call-big {
@@ -509,52 +488,57 @@ article p {
   color: #000;
 }
 
-/* Big Card Styles */
-.big-card {
-  background-color: #323232;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  padding: 2rem;
-  text-align: center;
-  margin-top: 2rem;
+/* Style for the embedded video inside each small card */
+/* Style for the embedded video inside each small card */
+.reel {
+  width: 100%; /* Full width of the small card */
+  height: 100%; /* Full height of the small card */
+  border: none; /* Remove iframe border */
+  border-radius: 10px; /* Rounded corners */
+  box-sizing: border-box; /* Ensure padding and border are included in width and height */
 }
 
+/* Big Card Styles */
+.big-card {
+  width: 56rem; /* Fixed width for the card */
+  background-color: #201f1f; /* Dark background color */
+  border-radius: 15px; /* Rounded corners */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+  padding: 1rem 3rem; /* Padding inside the card */
+  margin-bottom: 8rem; /* Space below the card */
+  box-sizing: border-box; /* Include padding and border in width and height */
+}
+
+/* Big Card Header Styles */
 .big-card-header h2 {
-  font-size: 1.5rem;
-  color: #f4f4f4;
-  margin-bottom: 0.5rem;
+  font-size: 1.5rem; /* Font size for the title */
+  color: #ffffff; /* White text color */
+  margin-bottom: 0.5rem; /* Space below the title */
 }
 
 .big-card-header h3 {
-  font-size: 1.2rem;
-  color: #bfb4b4;
-  margin-bottom: 1rem;
+  font-size: 1.2rem; /* Font size for the subheading */
+  color: #ffffff; /* White text color */
+  margin-bottom: 3rem; /* Space below the subheading */
 }
 
+/* Big Card Content Styles */
 .big-card-content {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  margin-top: 1rem;
+  display: flex; /* Use flexbox layout */
+  gap: 2rem; /* Gap between small cards */
+  justify-content: center; /* Center small cards horizontally */
 }
 
+/* Small Card Styles */
 .small-card {
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  padding: 1rem;
-  text-align: center;
-  max-width: 150px;
-  color: #f4f4f4;
-}
-
-.small-card h4 {
-  font-size: 1rem;
-  margin-bottom: 0.5rem;
-}
-
-.small-card p {
-  font-size: 0.9rem;
+  background-color: rgba(255, 255, 255, 0.1); /* Slightly visible background */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+  height: 500px; /* Fixed height for the small card */
+  width: 500px; /* Fixed width for the small card */
+  padding: 10px; /* Padding inside the small card */
+  color: #f4f4f4; /* Light text color */
+  box-sizing: border-box; /* Include padding and border in width and height */
 }
 
 
@@ -568,4 +552,12 @@ article p {
   100% {
       border-color: #fff;
   }
+}
+
+hr {
+  border: 0; /* Remove default border */
+  height: 1px; /* Set height to control thickness */
+  background-color: #333; /* Set background color for the line */
+  width: 30%; /* Custom width */
+  margin: 140px auto; /* Center the line and add space */
 }
