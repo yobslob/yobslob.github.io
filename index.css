@@ -4,6 +4,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  overflow: auto;
 }
 
 header {
@@ -54,7 +55,9 @@ header nav ul {
   display: flex;
   gap: 2.5rem;
   padding: 0;
-  margin-top: 5%;
+  margin-top: 3rem;
+  margin-left: 10rem;
+  margin-bottom: 2rem;
   white-space: nowrap;
 }
 
@@ -69,6 +72,26 @@ header nav ul li a {
   font-size: 1rem;
 }
 
+.scroll-container {
+  text-align: center; /* Center the link horizontally */
+  margin-left:10rem; /* Add some spacing around the container */
+}
+
+/* Link styling */
+.scroll-container .get-app {
+  display: inline-block;
+  background-color: transparent;
+  border: 1px white solid;
+  animation: border-gradient 4s infinite;
+  white-space: nowrap;
+  border-radius: 10px;
+  padding: 0.3rem 1.2rem;
+  cursor: pointer;
+  font-size: 1rem;
+  color: #f4f4f4;
+  text-decoration: none; /* Remove underline from the link */
+}
+
 header .get-app {
   background-color: transparent;
   border: 1px white solid ;
@@ -78,7 +101,7 @@ header .get-app {
   padding: 0.3rem 1.2rem;
   cursor: pointer;
   font-size: 1rem;
-  margin-left: 40%;
+  margin-left: 100px;
   color: #f4f4f4;
 }
 
@@ -420,22 +443,15 @@ article p {
 
 /* Short Form Content Styles */
 
-.short-form-content-wrapper {
-  text-align: center;
-  margin: rem auto;
-  max-width: 6800px; /* Adjust max width as needed */
-}
-
 .content-sections {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  margin: 20px;
 }
 
 .content-section {
-  max-width: 800px; /* Adjust max-width as needed */
+  max-width: 1500px; /* Adjust max-width as needed */
   margin: 20px 0;
 }
 
@@ -443,32 +459,27 @@ article p {
 .statement h1 {
   font-size: 1.8rem; /* Adjust size as needed */
   color: #f8f8f8;
-  margin-bottom: 1rem;
   text-align: center;
+  display: inline;
+  line-height: 37px;
+  animation: pop-in 0.5s ease-out forwards;
+}
+
+.statement #purple {
+  color: #b473ed;
 }
 
 .statement h3 {
-  font-size: 1.2rem;
+  font-size: 0.9rem;
   color: #ffffff;
-  margin-bottom: 8rem;
+  margin-bottom: 5rem;
+  margin-top: 3rem;
   text-align: center;
+  animation: color-gradient 3s infinite ;
+  animation: pop-in 0.7s ease-out forwards;
 }
 
 /* Long Form Content Styles */
-
-#long-form-content h1 {
-  font-size: 1.8rem;
-  color: #f4f4f4;
-  margin-bottom: 3rem;
-  text-align: center;
-}
-
-#long-form-content h4 {
-  font-size: 1.2rem;
-  color: #f4f4f4;
-  margin-bottom: 8rem;
-  text-align: center;
-}
 
 .book-call-big {
   background-color: transparent;
@@ -479,7 +490,8 @@ article p {
   font-size: 1.2rem;
   cursor: pointer;
   margin-top: 1rem;
-  margin-bottom: 20rem;
+  margin-bottom: 4rem;
+  animation: pop-in 0.5s ease-out forwards;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -494,26 +506,44 @@ article p {
   width: 100%; /* Full width of the small card */
   height: 100%; /* Full height of the small card */
   border: none; /* Remove iframe border */
-  border-radius: 10px; /* Rounded corners */
+  border-radius: 20px; /* Rounded corners */
   box-sizing: border-box; /* Ensure padding and border are included in width and height */
 }
 
 /* Big Card Styles */
 .big-card {
-  width: 56rem; /* Fixed width for the card */
-  background-color: #201f1f; /* Dark background color */
+  width: 60rem; /* Fixed width for the card */
+  /* Dark background color */
   border-radius: 15px; /* Rounded corners */
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Shadow for depth */
-  padding: 1rem 3rem; /* Padding inside the card */
+  box-shadow: 0 6px 12px rgba(255, 255, 255, 0.2); /* Shadow for depth */
+  padding: 1rem 1rem; /* Padding inside the card */
   margin-bottom: 8rem; /* Space below the card */
+  background-image: url('photos/cardbg.jpg');
   box-sizing: border-box; /* Include padding and border in width and height */
 }
 
 /* Big Card Header Styles */
 .big-card-header h2 {
-  font-size: 1.5rem; /* Font size for the title */
+  font-size: 2.5rem; /* Font size for the title */
   color: #ffffff; /* White text color */
+  z-index: 1;
+  position: relative;
   margin-bottom: 0.5rem; /* Space below the title */
+}
+
+.big-card-header h2::before {
+  content: "";
+  position: absolute;
+  top: 120%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%; /* Slightly larger than the text */
+  height: 320%; /* Slightly larger than the text */
+  background: linear-gradient(45deg, #130413, #8e43a7, #131113); /* Neon gradient */
+  filter: blur(69px); /* Blur to create the glow effect */
+  z-index: -1; /* Position behind the text */
+  border-radius: 75px; /* Rounded corners for a smoother glow */
+  opacity: 0.45; /* Slightly transparent to show background */
 }
 
 .big-card-header h3 {
@@ -525,19 +555,20 @@ article p {
 /* Big Card Content Styles */
 .big-card-content {
   display: flex; /* Use flexbox layout */
-  gap: 2rem; /* Gap between small cards */
+  gap: 2.5rem; /* Gap between small cards */
   justify-content: center; /* Center small cards horizontally */
 }
 
 /* Small Card Styles */
 .small-card {
-  background-color: rgba(255, 255, 255, 0.1); /* Slightly visible background */
+  background-color: rgba(222, 214, 214, 0.1); /* Slightly visible background */
   border-radius: 10px; /* Rounded corners */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for depth */
   height: 500px; /* Fixed height for the small card */
   width: 500px; /* Fixed width for the small card */
-  padding: 10px; /* Padding inside the small card */
-  color: #f4f4f4; /* Light text color */
+  padding: 7px; /* Padding inside the small card */
+  color: hsl(0, 0%, 76%); /* Light text color */
+  z-index: 1;
   box-sizing: border-box; /* Include padding and border in width and height */
 }
 
@@ -554,10 +585,146 @@ article p {
   }
 }
 
-hr {
+@keyframes color-gradient {
+  0% {
+      color: #ffffff;
+  }
+  50% {
+      color: #b473ed;
+  }
+  100% {
+      color: #ffffff;
+  }
+}
+
+@keyframes pop-in {
+  0% {
+      transform: translateY(100%);
+      opacity: 0;
+  }
+  100% {
+      transform: translateY(0);
+      opacity: 1;
+  }
+}
+
+#content_buttons{
   border: 0; /* Remove default border */
   height: 1px; /* Set height to control thickness */
   background-color: #333; /* Set background color for the line */
   width: 30%; /* Custom width */
   margin: 140px auto; /* Center the line and add space */
+}
+
+#review {
+  border: 0; /* Remove default border */
+  height: 100px; /* Set height to control thickness */
+  background-color: #000000; /* Set background color for the line */
+  width: 0.1%; /* Custom width */
+  margin: 140px auto; /* Center the line and add space */
+}
+
+.review-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 0;
+  background-color: #000000;
+}
+
+.review-card {
+  width: 60rem; /* Fixed width for the card */
+  background-color: #201f1f; /* Dark background color */
+  border-radius: 25px; /* Rounded corners */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+  padding: 1rem 1rem; /* Padding inside the card */
+  margin-bottom: 8rem; /* Space below the card */
+  box-sizing: border-box; /* Include padding and border in width and height */
+  display: flex;
+  flex-direction: row;
+  background-image: url('photos/cardbg.jpg'); /* Background image */  align-items: center; /* White text color for contrast */
+}
+
+.review-video {
+  flex: 1;
+  margin-right: 55px;
+  height: 400px;
+  width: 350px;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  border-radius: 15%;
+}
+
+.review-content {
+  flex: 2;
+}
+
+.review-content h1 {
+  font-size: 28px;
+  color: #fff; /* White color for the text */
+  margin-bottom: 10px;
+}
+
+.review-content h4 {
+  margin-left: 10px;
+  color:#b473ed /* Lighter gray for secondary text */
+}
+
+.review-content h5 {
+  margin-left:14px;
+  color: #ddd; /* Lighter gray for secondary text */
+}
+
+.booking-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+  background-color: #000000; /* Light background color for contrast */
+}
+
+.booking-content {
+  text-align: center; /* Center text inside the content div */
+  width:100%;
+  max-width: 100%; /* Max width to ensure responsiveness */
+  box-sizing: border-box; /* Include padding and border in the width */
+}
+
+.booking-heading {
+  font-size: 2.5rem; /* Font size for the heading */
+  color: #f7f1f1; /* Dark text color */
+  position: relative;
+  display: inline-block;
+}
+
+.booking-subheading {
+  font-size: 1.25rem; /* Font size for the subheading */
+  color: #9c9999; /* Lighter text color */
+  margin-bottom: 2rem; /* Space below the subheading */
+}
+
+.calendly-inline-widget {
+  width: 100%; /* Full width */
+  height: 100vh; /* Height to fit well without scroll */
+  border: 0; /* Remove default border if any */
+  margin: 0 auto; /* Center horizontally */
+  margin-bottom: 14rem;
+}
+
+footer {
+  background-color: #000000; /* Dark background color */
+  color: #878585; /* Light text color */
+  text-align: center; /* Center align text */
+  padding: 1rem; /* Padding around the footer */
+  position: relative; /* Make sure the footer does not overlap with content */
+  bottom: 0; /* Position at the bottom of the page */
+  width: 100%; /* Full width */
+  height: 100px;
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.2); /* Shadow for a subtle effect */
+}
+
+/* Footer Text Styles */
+footer p {
+  margin: 0; /* Remove default margin */
+  font-size: 1.1rem; /* Slightly smaller font size */
 }
