@@ -112,6 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         startScrolling();
     }
+
     const shortFormButton = document.querySelector('.short-form');
     const longFormButton = document.querySelector('.long-form');
     const shortFormContent = document.getElementById('short-form-content');
