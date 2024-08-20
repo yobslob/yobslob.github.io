@@ -151,3 +151,20 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 });
+
+// Adjust font size dynamically for responsiveness
+window.addEventListener('resize', function() {
+    const newSize = window.innerWidth / 100 + 'px';
+    document.documentElement.style.fontSize = newSize;
+});
+
+// Toggle content sections based on button clicks
+document.querySelector('.short-form').addEventListener('click', function() {
+    document.querySelector('#short-form-content').style.display = 'block';
+    document.querySelector('#long-form-content').style.display = 'none';
+});
+
+document.querySelector('.long-form').addEventListener('click', function() {
+    document.querySelector('#short-form-content').style.display = 'none';
+    document.querySelector('#long-form-content').style.display = 'block';
+});
