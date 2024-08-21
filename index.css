@@ -517,7 +517,7 @@ article p {
   width: 60rem; /* Fixed width for the card */
   /* Dark background color */
   border-radius: 15px; /* Rounded corners */
-  box-shadow: 0 6px 12px rgba(255, 255, 255, 0.2); /* Shadow for depth */
+  box-shadow: 0 6px 12px rgba(134, 36, 183, 0.2); /* Shadow for depth */
   padding: 1rem 1rem; /* Padding inside the card */
   margin-bottom: 8rem; /* Space below the card */
   background-image: url('photos/cardbg.jpg');
@@ -649,7 +649,7 @@ article p {
   width: 60rem; /* Fixed width for the card */
   background-color: #201f1f; /* Dark background color */
   border-radius: 25px; /* Rounded corners */
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+  box-shadow: 0 6px 12px rgba(52,31,61, 0.9); /* Shadow for depth */
   padding: 1rem 1rem; /* Padding inside the card */
   margin-bottom: 8rem; /* Space below the card */
   box-sizing: border-box; /* Include padding and border in width and height */
