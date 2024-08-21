@@ -76,8 +76,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Add horizontal scrolling functionality with blur effect
         let scrollInterval;
-        const scrollSpeed = 4; // Adjust scrolling speed
-        const scrollDelay = 10; // Adjust scrolling delay
+        const scrollSpeed = 8; // Adjust scrolling speed
+        const scrollDelay = 8; // Adjust scrolling delay
 
         const startScrolling = () => {
             scrollInterval = setInterval(() => {
@@ -93,12 +93,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     const cardRect = card.getBoundingClientRect();
 
                     // Check if the card is near the start of the container
-                    if (cardRect.left < containerRect.left + 80) {
+                    if (cardRect.left < containerRect.left + 40) {
                         card.classList.add('blur-in');
                         card.classList.remove('blur-out');
                     }
                     // Check if the card is near the end of the container
-                    else if (cardRect.right > containerRect.right - 80) {
+                    else if (cardRect.right > containerRect.right - 40) {
                         card.classList.add('blur-out');
                         card.classList.remove('blur-in');
                     }
@@ -153,18 +153,34 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // Adjust font size dynamically for responsiveness
-window.addEventListener('resize', function() {
+window.addEventListener('resize', function () {
     const newSize = window.innerWidth / 100 + 'px';
     document.documentElement.style.fontSize = newSize;
 });
 
 // Toggle content sections based on button clicks
-document.querySelector('.short-form').addEventListener('click', function() {
+document.querySelector('.short-form').addEventListener('click', function () {
     document.querySelector('#short-form-content').style.display = 'block';
     document.querySelector('#long-form-content').style.display = 'none';
 });
 
-document.querySelector('.long-form').addEventListener('click', function() {
+document.querySelector('.long-form').addEventListener('click', function () {
     document.querySelector('#short-form-content').style.display = 'none';
     document.querySelector('#long-form-content').style.display = 'block';
 });
+
+function updateURL() {
+    const targetId = 'review';
+    const targetElement = document.getElementById(targetId);
+
+    // Temporarily remove the hash
+    window.history.replaceState(null, null, ' ');
+
+    // Force re-add the hash to trigger scroll
+    window.location.hash = targetId;
+
+    // Optionally, you can use a small timeout to ensure the hash update triggers scroll
+    setTimeout(() => {
+        targetElement.scrollIntoView({ behavior: 'smooth' });
+    }, 0);
+}
