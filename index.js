@@ -184,3 +184,8 @@ function updateURL() {
         targetElement.scrollIntoView({ behavior: 'smooth' });
     }, 0);
 }
+
+function toggleMenu() {
+    var menu = document.querySelector('header nav ul');
+    menu.classList.toggle('active');
+}
