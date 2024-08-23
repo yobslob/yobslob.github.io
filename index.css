@@ -7,10 +7,25 @@ body {
   overflow: auto;
   overflow-x: hidden;
   font-size: 100%;
+  background: linear-gradient(-40deg, #000000, #0d0014, #000000);
+  background-size: 400% 400%;
+  animation: gradientAnimation 4s ease infinite;
+}
+
+@keyframes gradientAnimation {
+  0% {
+      background-position: 0% 50%;
+  }
+  50% {
+      background-position: 100% 50%;
+  }
+  100% {
+      background-position: 0% 50%;
+  }
 }
 
 header {
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(11, 0, 16, 0.7);
   position: fixed;
   width: 100%;
   top: 0;
@@ -203,96 +218,42 @@ header .get-app {
   }
 }
 
-.hero {
-  position: relative;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: #fff;
+.intro {
+  margin-top: 300px;
+  margin-bottom: 100px;
+  background-color: transparent;
+  padding: 50px 0;
   text-align: center;
-  overflow: hidden;
 }
 
-.video-container {
-  position:absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  overflow: hidden;
+.intro h1 {
+  font-size: 52px;
+  font-weight: 50;
+  font-family: 'Roboto', Arial, sans-serif;
+  margin-bottom: 20px;
+  color: #c5c5c5;
 }
 
-.video-container video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.intro p {
+  font-size: 18px;
+  font-family: 'Roboto', Arial, sans-serif;
+  color: #9a9797;
+  margin-top: 38px;
+  margin-bottom: 70px;
 }
 
-.catchy-phrase {
-  position: relative;
-  padding: 17rem;
-  border-radius: 10px;
-  z-index: 1;
-  opacity: 0;
-  animation: fadeIn 2s forwards;
-  animation-delay: 1s;
-}
-
-.catchy-phrase h1 {
-  color: #4d1717;
-  font-size: 2.5rem;
-  margin: 0;
-  font-family: "Trebuchet MS", Helvetica, sans-serif;
-}
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-.articles {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  justify-content: center;
-  margin-top: 2rem;
-  z-index: 1;
-}
-
-article {
-  background-color: rgba(255, 255, 255, 0.9);
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  max-width: 300px;
-  padding: 1rem;
-  transition: transform 0.3s;
-}
-
-article:hover {
-  transform: translateY(-10px);
-}
-
-article h2 {
-  font-size: 1.5rem;
-  color: #333;
-}
-
-article p {
-  font-size: 1rem;
-  color: #666;
+.intro p::before {
+  display: block;
+  width: 100px;
+  height: 2px;
+  background-color: transparent;
+  margin: 20px auto;
 }
 
 .counter {
   margin-top: 300px;
   margin-bottom: 100px;
-  background-color: #000000;
+  background-color: transparent;
   padding: 50px 0;
   text-align: center;
 }
@@ -318,7 +279,7 @@ article p {
   display: block;
   width: 100px;
   height: 2px;
-  background-color: #ccc;
+  background-color: transparent;
   margin: 20px auto;
 }
 
@@ -339,7 +300,7 @@ article p {
 }
 
 .metric-card {
-  background-color: #000000; /* Set background color to black */
+  background-color: transparent; /* Set background color to black */
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   max-width: 200px;
@@ -374,7 +335,7 @@ article p {
 }
 
 .previous-clients {
-  background-color: #000000;
+  background-color: transparent;
   padding: 4rem 0;
   text-align: center;
   position: relative;
@@ -393,7 +354,7 @@ article p {
   flex-wrap: nowrap; /* Prevents wrapping of cards */
   gap: 5rem;
   padding: 1rem;
-  margin: 0 20%;
+  margin: 0 10%;
   max-width: 100%;
   scrollbar-width: none; /* For Firefox */
   -ms-overflow-style: none; /* For Internet Explorer and Edge */
@@ -422,15 +383,15 @@ article p {
 
 .client-card.blur-in,
 .client-card.blur-out {
-  opacity: 0.5; /* Reduce opacity for the blur effect */
+  opacity: 0.97; /* Reduce opacity for the blur effect */
 }
 
 .client-card.blur-in {
-  filter: blur(4px); /* Apply a blur effect */
+  filter: blur(2.4px); /* Apply a blur effect */
 }
 
 .client-card.blur-out {
-  filter: blur(4px); /* Apply a blur effect */
+  filter: blur(2.4px); /* Apply a blur effect */
 }
 
 .client-card:hover {
@@ -653,6 +614,37 @@ article p {
 }
 
 
+/* Embedded Video Styling */
+.big-card iframe {
+  width: 100%;
+  height: 100%;
+  border: none; /* Removes border around the video */
+  border-radius: 10px; /* Matches the card's border radius */
+  z-index: 2; /* Places the video above the small-card */
+  position: relative; /* Positioning context for iframe */
+}
+
+/* Aspect Ratio Control */
+.big-card iframe {
+  aspect-ratio: 16/9; /* Keeps the video in a 16:9 ratio */
+  display: block; /* Ensures the iframe is a block element */
+}
+
+/* Responsive Adjustments */
+@media only screen and (max-width: 768px) {
+  .big-card {
+      padding: 10px; /* Adjust padding for smaller screens */
+  }
+
+  .small-card {
+      border-radius: 8px; /* Optional: Adjust radius on smaller screens */
+  }
+
+  .big-card iframe {
+      border-radius: 8px; /* Adjust to match the small-card */
+  }
+}
+
 @keyframes border-gradient {
   0% {
       border-color: #fff;
@@ -699,7 +691,7 @@ article p {
 #review {
   border: 0; /* Remove default border */
   height: 100px; /* Set height to control thickness */
-  background-color: #000000; /* Set background color for the line */
+  background-color: transparent; /* Set background color for the line */
   width: 0.1%; /* Custom width */
   margin: 140px auto; /* Center the line and add space */
 }
@@ -709,7 +701,7 @@ article p {
   flex-direction: column;
   align-items: center;
   padding: 2rem 0;
-  background-color: #000000;
+  background-color: transparent;
 }
 
 #testimonial {
@@ -771,7 +763,7 @@ article p {
   justify-content: center;
   align-items: center;
   height: 100vh; /* Full viewport height */
-  background-color: #000000; /* Light background color for contrast */
+  background-color: transparent; /* Light background color for contrast */
 }
 
 .booking-content {
@@ -898,16 +890,12 @@ nav .scroll-container {
   }
 }
 
-footer {
-  background-color: #000000; /* Footer background color */
-  color: #fff; /* Text color */
-  padding: 1rem;
-  text-align: center; /* Center align text and icons */
+.footer-content {
+  padding-bottom: 1rem;
 }
 
 .footer-content h2 {
   font-size: 2rem;
-  margin-bottom: 3rem; /* Space below heading */
 }
 
 .social-icons {
@@ -923,7 +911,7 @@ footer {
 .social-icons svg {
   width: 34px; /* Size of the icons */
   height: 25px;
-  margin-bottom: 9rem;
+  padding-bottom: 1rem;
   transition: opacity 0.3s ease; /* Smooth transition for hover effect */
 }
 
