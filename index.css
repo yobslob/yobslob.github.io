@@ -7,9 +7,9 @@ body {
   overflow: auto;
   overflow-x: hidden;
   font-size: 100%;
-  background: linear-gradient(-40deg, #000000, #0d0014, #000000);
+   background: linear-gradient(-57deg,#07000f,#000000, #0b0010, #000000);
   background-size: 400% 400%;
-  animation: gradientAnimation 4s ease infinite;
+  animation: gradientAnimation 3s ease infinite;
 }
 
 @keyframes gradientAnimation {
