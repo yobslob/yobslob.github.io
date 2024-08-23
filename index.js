@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+    
     const metrics = document.querySelectorAll('.metric-card');
     const cards = document.querySelectorAll('.client-card'); // Updated selector for client cards
 
