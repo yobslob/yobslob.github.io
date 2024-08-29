@@ -7,11 +7,10 @@ body {
   overflow: auto;
   overflow-x: hidden;
   font-size: 100%;
-   background: linear-gradient(-57deg,#07000f,#000000, #0b0010, #000000);
+  background: linear-gradient(-57deg,#07000f,#000000, #09000d, #000000);
   background-size: 400% 400%;
   animation: gradientAnimation 3s ease infinite;
 }
-
 @keyframes gradientAnimation {
   0% {
       background-position: 0% 50%;
@@ -23,9 +22,8 @@ body {
       background-position: 0% 50%;
   }
 }
-
 header {
-  background-color: rgba(11, 0, 16, 0.7);
+  background-color: rgba(0, 0, 0, 0.7);
   position: fixed;
   width: 100%;
   top: 0;
@@ -34,37 +32,29 @@ header {
   padding: 1rem 2rem;
   z-index: 10;
   justify-content: space-between;
+  
 }
-
 header .logo {
+  text-transform: uppercase;
+  font: 1.5rem 'MutatorSans', sans-serif;
+  font-weight: 580;
   display: flex;
   align-items: center;
-  margin-right: 10px;
+  margin: auto 1.5rem;
 }
-
 header #white {
   font-size: 1.5rem;
   color: #f4f4f4;
   margin-right: 10px;
 }
-
 header #purple {
   font-size: 1.5rem;
-  color: purple;
+  color: #862C92;
 }
-
 header nav {
   display: flex;
   align-items: center;
   margin: 0 auto;
-}
-
-header .logo img {
-  height: 101px;
-  margin-right: 10px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-right: 15px;
 }
 
 header nav ul {
@@ -72,14 +62,12 @@ header nav ul {
   display: flex;
   gap: 2.5rem;
   padding: 0;
-  margin: 0;
+  margin-top: 2.5rem;
+  margin-left: 12rem;
+  margin-bottom: 2rem;
   white-space: nowrap;
   justify-content: space-between;
   align-items: center;
-}
-
-header nav ul li {
-  margin: 0 5px; /* Adjust the spacing between items as needed */
 }
 
 header nav ul li a:hover {
@@ -87,123 +75,29 @@ header nav ul li a:hover {
   transition: color 0.3s;
 }
 
-header nav ul li a {
+  header nav ul li a {
   color: white;
   text-decoration: none;
-  padding: 10px 5px;
-  display: block;
   font-size: 1rem;
-}
-
-@media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    align-items: center;
-    padding: 1rem;
-  }
-
-  header nav ul {
-    display: none; /* Hide the nav-links by default on mobile */
-    flex-direction: column;
-    position: absolute;
-    top: 80px; /* Below the header */
-    left: 0;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
-    padding: 1rem 0;
-  }
-
-  .hamburger {
-    display: block;
-    font-size: 30px;
-    color: #fff;
-    cursor: pointer;
-    margin-bottom: 10px;
-    order:2;
-  }
-
-  header .logo, header #white, header #purple {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  header #white {
-    margin: 0;
-  }
-
-  header .logo img {
-    height: 80px; /* Adjust logo size for mobile */
-    margin-bottom: 10px; /* Space between logo and title */
-  }
-
-  .book-call {
-    order: 3; /* Ensure it stays last in the order */
-    margin-top: 10px;
-    align-self: flex-end;
-    justify-content: flex-end;
-    width: 100%; /* Full width for centering */
-    text-align: right; /* Align to the right */
-  }
-  
-  header nav ul.active {
-    display: flex; /* Show the menu when active */
-  }
-
-  header nav ul li {
-    text-align: center;
-    padding: 10px 0;
-    width: 100%;
-  }
-
-  header nav ul li a {
-    padding: 15px 0;
-    font-size: 1.2rem;
-  }
-
-}
-
-@media (min-width: 769px) {
-  .hamburger {
-    display: none;
-  }
-}
-
-.scroll-container {
-  text-align: center; /* Center the link horizontally */
-  margin-left:10rem; /* Add some spacing around the container */
-}
-
-/* Link styling */
-.scroll-container .get-app {
-  display: inline-block;
-  background-color: transparent;
-  border: 1px white solid;
-  animation: border-gradient 4s infinite;
-  white-space: nowrap;
-  border-radius: 10px;
-  padding: 0.3rem 1.2rem;
-  cursor: pointer;
-  font-size: 1rem;
-  color: #f4f4f4;
-  text-decoration: none; /* Remove underline from the link */
-}
-
-.get-app:hover {
-  transform: scale(1.05);
 }
 
 header .get-app {
   background-color: transparent;
   border: 1px white solid ;
-  animation: border-gradient 4s infinite;
+  animation: border-gradient 3s infinite;
   white-space: nowrap;
   border-radius: 10px;
   padding: 0.3rem 1.2rem;
   cursor: pointer;
   font-size: 1rem;
-  margin-left: 100px;
+  margin-left: 15rem;
   color: #f4f4f4;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.get-app:hover {
+  transform: scale(1.05);
 }
 
 @keyframes border-gradient {
@@ -217,32 +111,53 @@ header .get-app {
     border-color: #fff;
   }
 }
-
-.intro {
-  margin-top: 300px;
-  margin-bottom: 100px;
+.hero {
+  margin-top: 350px;
   background-color: transparent;
-  padding: 50px 0;
+  padding: 5px 0;
   text-align: center;
 }
-
-.intro h1 {
-  font-size: 52px;
-  font-weight: 50;
-  font-family: 'Roboto', Arial, sans-serif;
+@font-face {
+  font-family: 'Copperplate';
+  src: local('Copperplate'), local('Copperplate Gothic Light');
+}
+@font-face {
+  font-family: 'Didot';
+  src: local('Didot'), local('Didot Regular');
+}
+.hero h1 {
+  font: 3.8rem 'Copperplate', serif;
+  font-weight: 700;
   margin-bottom: 20px;
-  color: #c5c5c5;
+  color: #dbdbdb;
+  display: inline;
+  background: linear-gradient(90deg, #d480fe, #3d004e); /* Gradient from left to right */
+  -webkit-background-clip: text; /* Clips the background to the text */
+  background-clip: text;
+  -webkit-text-fill-color: transparent; /* Makes the text itself transparent to reveal the gradient */
+  margin: 20px 0;
+  opacity: 0;
+  animation: fadeIn 2.8s ease-in forwards;
 }
 
-.intro p {
-  font-size: 18px;
+.hero h2 {
+  font: 3.8rem 'Copperplate', serif;
+  font-weight: 200;
+  margin-bottom: 20px;
+  color: #dbdbdb;
+  display: inline;
+  opacity: 0;
+  animation: fadeIn 2s ease-in forwards;
+}
+
+.hero p {
+  font-size: 19px;
   font-family: 'Roboto', Arial, sans-serif;
   color: #9a9797;
   margin-top: 38px;
-  margin-bottom: 70px;
 }
 
-.intro p::before {
+.hero p::before {
   display: block;
   width: 100px;
   height: 2px;
@@ -250,6 +165,41 @@ header .get-app {
   margin: 20px auto;
 }
 
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.articles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 2rem;
+  z-index: 1;
+}
+article {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  padding: 1rem;
+  transition: transform 0.3s;
+}
+article:hover {
+  transform: translateY(-10px);
+}
+article h2 {
+  font-size: 1.5rem;
+  color: #333;
+}
+article p {
+  font-size: 1rem;
+  color: #666;
+}
 .counter {
   margin-top: 300px;
   margin-bottom: 100px;
@@ -259,18 +209,19 @@ header .get-app {
 }
 
 .counter h1 {
-  font-size: 42px;
-  font-weight: 50;
-  font-family: 'Roboto', Arial, sans-serif;
-  margin-bottom: 20px;
-  color: #f4f4f4;
+  font-family: 'Didot', serif; /* Fallback to serif if Didot is unavailable */
+  font-size: 41px;
+  font-weight: 530;
+  color: #fcf9f9; /* Set the text color to black */
+  text-align: center; /* Center the heading on the page */
+  margin: 20px 0; /* Adds space above and below the heading */
 }
 
 .counter #inner_about {
   font-size: 18px;
   font-family: 'Roboto', Arial, sans-serif;
   color: #bfb4b4;
-  margin-top: 38px;
+  margin-top: 8px;
   margin-bottom: 70px;
 }
 
@@ -279,7 +230,7 @@ header .get-app {
   display: block;
   width: 100px;
   height: 2px;
-  background-color: transparent;
+  background-color: rgb(152, 151, 152);
   margin: 20px auto;
 }
 
@@ -333,7 +284,6 @@ header .get-app {
   color: purple; /* Change the color if needed */
   margin-bottom: 2rem; /* Increase space between number and text */
 }
-
 .previous-clients {
   background-color: transparent;
   padding: 4rem 0;
@@ -342,9 +292,10 @@ header .get-app {
 }
 
 .previous-clients h2 {
-  font-size: 2.5rem;
+  font: 2.5rem 'MutatorSans', sans-serif;
+  font-weight: 550;
   color: #f4f4f4;
-  margin-bottom: 7rem;
+  margin-bottom: 5rem;
 }
 
 .client-cards {
@@ -426,10 +377,10 @@ header .get-app {
   background-color: transparent;
   border: 1px solid white;
   animation: border-gradient 3s infinite;
-  height: 1.5rem;
+  height: 1.4rem;
   width: 15rem;
   border-radius: 10px;
-  padding: 0.4rem 1rem;
+  padding: 0.4rem 0.8rem;
   padding-top: 0.6rem;
   cursor: pointer;
   font-size: 1rem;
@@ -463,12 +414,14 @@ header .get-app {
 .content-button.active {
   background-color: rgb(81, 153, 166);
   color: #fff;
+  font-family: "Copperplate";
   border-color: rgb(255, 243, 255);
 }
 
 .content-button.inactive {
   background-color: transparent;
   color: #f4f4f4;
+  font-family: "Copperplate";
   border-color: #f4f4f4;
 }
 
@@ -489,6 +442,7 @@ header .get-app {
   flex-direction: column;
   align-items: center;
   text-align: center;
+  margin-bottom: 5rem;
 }
 
 .content-section {
@@ -498,11 +452,12 @@ header .get-app {
 
 
 .statement h1 {
-  font-size: 1.8rem; /* Adjust size as needed */
   color: #f8f8f8;
   text-align: center;
+  font: 1.8rem 'MutatorSans', sans-serif;
   display: inline;
-  line-height: 37px;
+  line-height: 120%;
+  font-weight: 550;
   animation: pop-in 0.5s ease-out forwards;
 }
 
@@ -514,6 +469,7 @@ header .get-app {
   font-size: 0.9rem;
   color: #ffffff;
   margin-bottom: 5rem;
+  font-weight: 200;
   margin-top: 3rem;
   text-align: center;
   animation: color-gradient 3s infinite ;
@@ -555,18 +511,16 @@ header .get-app {
 .big-card {
   width: 60rem; /* Fixed width for the card */
   /* Dark background color */
-  border-radius: 15px; /* Rounded corners */
-  box-shadow: 0 6px 12px rgba(134, 36, 183, 0.2); /* Shadow for depth */
-  padding: 1rem 1rem; /* Padding inside the card */
-  margin-bottom: 8rem; /* Space below the card */
-  background-image: url('photos/cardbg.jpg');
+  border-radius: 15px; /* Rounded corners */ /* Shadow for depth */
+  padding: 1rem 1.2rem; /* Padding inside the card */
   box-sizing: border-box; /* Include padding and border in width and height */
 }
 
 /* Big Card Header Styles */
 .big-card-header h2 {
-  font-size: 2.5rem; /* Font size for the title */
   color: #ffffff; /* White text color */
+  font: 2.2rem 'MutatorSans', sans-serif;
+  font-weight: 690;
   z-index: 1;
   position: relative;
   margin-bottom: 0.5rem; /* Space below the title */
@@ -588,8 +542,9 @@ header .get-app {
 }
 
 .big-card-header h3 {
-  font-size: 1.2rem; /* Font size for the subheading */
+  font-size: 1.1rem; /* Font size for the subheading */
   color: #ffffff; /* White text color */
+  font-weight: 400;
   margin-bottom: 3rem; /* Space below the subheading */
 }
 
@@ -602,7 +557,7 @@ header .get-app {
 
 /* Small Card Styles */
 .small-card {
-  background-color: rgba(222, 214, 214, 0.1); /* Slightly visible background */
+  background-color: transparent; /* Slightly visible background */
   border-radius: 10px; /* Rounded corners */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for depth */
   height: 500px; /* Fixed height for the small card */
@@ -717,7 +672,7 @@ header .get-app {
 
 .review-card {
   width: 60rem; /* Fixed width for the card */
-  background-color: #201f1f; /* Dark background color */
+  background-color: #000000; /* Dark background color */
   border-radius: 25px; /* Rounded corners */
   box-shadow: 0 6px 12px rgba(52,31,61, 0.9); /* Shadow for depth */
   padding: 1rem 1rem; /* Padding inside the card */
@@ -725,7 +680,8 @@ header .get-app {
   box-sizing: border-box; /* Include padding and border in width and height */
   display: flex;
   flex-direction: row;
-  background-image: url('photos/cardbg.jpg'); /* Background image */  align-items: center; /* White text color for contrast */
+   /* Background image */
+     align-items: center; /* White text color for contrast */
 }
 
 .review-video {
@@ -777,7 +733,7 @@ header .get-app {
   font-size: 2.5rem; /* Font size for the heading */
   color: #f7f1f1; /* Dark text color */
   position: relative;
-  display: inline-block;
+
 }
 
 .booking-subheading {
@@ -923,11 +879,10 @@ footer {
   background-color: #000000; /* Dark background color */
   color: #cbcaca; /* Light text color */
   text-align: center; /* Center align text */
-  padding: 1rem; /* Padding around the footer */
+  padding-top: 1rem; /* Padding around the footer */
   position: relative; /* Make sure the footer does not overlap with content */
-  bottom: 0; /* Position at the bottom of the page */
   width: 100%; /* Full width */
-  height: 100px;
+  height: 100%;
   box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.2); /* Shadow for a subtle effect */
 }
 
@@ -935,4 +890,6 @@ footer {
 footer p {
   margin: 0; /* Remove default margin */
   font-size: 1.1rem; /* Slightly smaller font size */
+  color: rgb(75, 74, 75);
+  padding-top: 3rem;
 }
