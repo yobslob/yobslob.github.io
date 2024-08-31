@@ -357,8 +357,11 @@ article p {
   scrollbar-width: none; /* For Firefox */
   -ms-overflow-style: none; /* For Internet Explorer and Edge */
   position: relative;
+  cursor: pointer;
 }
-
+.client-cards a{
+  text-decoration: none;
+}
 .client-cards::-webkit-scrollbar {
   display: none; /* For Chrome, Safari, and newer versions of Edge */
 }
