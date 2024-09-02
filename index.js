@@ -1,3 +1,13 @@
+function detectMobile() {
+        const isMobile = /iPhone|iPad|iPod|Android|webOS|BlackBerry|Windows Phone/i.test(navigator.userAgent);
+        
+        if (isMobile) {
+            alert("Please open this website on PC/laptop for better interface.");
+        }
+    }
+
+window.onload = detectMobile;
+
 document.addEventListener('DOMContentLoaded', () => {
     const metrics = document.querySelectorAll('.metric-card');
     const cards = document.querySelectorAll('.client-card'); // Updated selector for client cards
